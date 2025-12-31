@@ -4,6 +4,7 @@ import com.github.iDimaBR.titanEnchanter.TitanEnchanter;
 import com.github.iDimaBR.titanEnchanter.models.EnchantLevel;
 import com.github.iDimaBR.titanEnchanter.models.EnchantMenuHolder;
 import com.github.iDimaBR.titanEnchanter.utils.ConfigUtil;
+import dev.reeve.commissary.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
@@ -30,15 +31,7 @@ public class EnchantManager {
     public void openEnchantingTable(Player player, EnchantLevel level) {
         playerLevels.put(player.getUniqueId(), level);
         player.closeInventory();
-
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                if (player.isOnline()) {
-                    player.openEnchanting(null, true);
-                }
-            }
-        }.runTaskLater(plugin, 3L);
+        player.openEnchanting(null, true);
     }
 
     public EnchantLevel getPlayerLevel(UUID uuid) {
@@ -50,13 +43,11 @@ public class EnchantManager {
     }
 
     public boolean hasEnoughTickets(Player player, int requiredLevel) {
-        // TODO: Integrate ticket API
-        return player.getLevel() >= requiredLevel;
+        return Main.getInstance().checkTickets(player, requiredLevel);
     }
 
     public void deductTickets(Player player, int amount) {
-        // TODO: Integrate ticket API
-        player.setLevel(player.getLevel() - amount);
+        Main.getInstance().removeTickets(player, amount);
 
         String message = config.getString("messages.tickets-deducted")
                 .replace("{amount}", String.valueOf(amount));

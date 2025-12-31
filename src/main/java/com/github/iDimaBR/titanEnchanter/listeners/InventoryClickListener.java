@@ -8,6 +8,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.inventory.Inventory;
 
 public class InventoryClickListener implements Listener {
 
@@ -25,8 +27,12 @@ public class InventoryClickListener implements Listener {
     public void onInventoryClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player)) return;
 
-        Player player = (Player) event.getWhoClicked();
+        final Player player = (Player) event.getWhoClicked();
         if (!guiManager.isMainMenu(event.getInventory())) return;
+
+        final Inventory clickedInventory = event.getClickedInventory();
+        if(clickedInventory == null) return;
+        if(clickedInventory.getType() == InventoryType.PLAYER) return;
 
         event.setCancelled(true);
         if (event.getCurrentItem() == null) return;
