@@ -1,0 +1,70 @@
+# TitanEnchanter Configuration
+# List of NPC IDs that will open the enchanter menu
+npc-ids:
+  - 1
+  - 2
+  - 3
+
+# Menu configuration
+menu:
+  title: "&6&lEnchanter"
+  size: 27
+
+  level-ranges:
+    "1-6":
+      title: "&aLevel 1-6"
+      material: "ENCHANTED_BOOK"
+      slot: 10
+      lore:
+        - "&7Enchant your items with"
+        - "&7levels &e{min}-{max}"
+        - ""
+        - "&eClick to open!"
+
+    "7-12":
+      title: "&aLevel 7-12"
+      material: "ENCHANTED_BOOK"
+      slot: 12
+      lore:
+        - "&7Enchant your items with"
+        - "&7levels &e{min}-{max}"
+        - ""
+        - "&eClick to open!"
+
+    "13-18":
+      title: "&aLevel 13-18"
+      material: "ENCHANTED_BOOK"
+      slot: 14
+      lore:
+        - "&7Enchant your items with"
+        - "&7levels &e{min}-{max}"
+        - ""
+        - "&eClick to open!"
+
+    "19-24":
+      title: "&aLevel 19-24"
+      material: "ENCHANTED_BOOK"
+      slot: 16
+      lore:
+        - "&7Enchant your items with"
+        - "&7levels &e{min}-{max}"
+        - ""
+        - "&eClick to open!"
+
+    "25-30":
+      title: "&aLevel 25-30"
+      material: "ENCHANTED_BOOK"
+      slot: 22
+      lore:
+        - "&7Enchant your items with"
+        - "&7levels &e{min}-{max}"
+        - ""
+        - "&eClick to open!"
+
+# Messages
+messages:
+  insufficient-tickets: "&cYou don't have enough tickets to enchant at this level!"
+  enchant-success: "&aSuccessfully enchanted your item!"
+  tickets-deducted: "&e{amount} tickets have been deducted from your account."
+  invalid-level: "&cYou can only enchant with levels {min}-{max} in this table!"
+  enchanting-table-opened: "&aOpened enchanting table for levels {min}-{max}"

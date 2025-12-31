@@ -1,4 +1,4 @@
-package com.github.iDimaBR.titanEnchanter.menus;
+package com.github.iDimaBR.titanEnchanter.models;
 
 public enum EnchantLevel {
     LEVEL_1_6(1, 6, "1-6"),
