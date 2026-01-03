@@ -53,8 +53,4 @@ public class EnchantManager {
                 .replace("{amount}", String.valueOf(amount));
         player.sendMessage(message);
     }
-
-    public boolean isValidLevel(int level, EnchantLevel enchantLevel) {
-        return level >= enchantLevel.getMinLevel() && level <= enchantLevel.getMaxLevel();
-    }
 }

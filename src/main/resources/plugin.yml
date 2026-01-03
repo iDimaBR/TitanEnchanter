@@ -2,4 +2,4 @@ name: TitanEnchanter
 version: '1.0-SNAPSHOT'
 main: com.github.iDimaBR.titanEnchanter.TitanEnchanter
 api-version: '1.19'
-depend: [Citizens, Commissary]
+depend: [Citizens, Commissary, ProtocolLib]
